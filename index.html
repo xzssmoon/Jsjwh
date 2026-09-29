@@ -1,0 +1,224 @@
+i<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ты очень красивая 💗</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    min-height: 100vh;
+    background: linear-gradient(160deg, #ffe4ef 0%, #ffd0e4 50%, #ffc0dd 100%);
+    font-family: 'Segoe UI', 'Arial', sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 30px 15px 60px;
+    overflow-x: hidden;
+  }
+
+  h1 {
+    font-size: 2.4rem;
+    color: #ff3d8b;
+    text-align: center;
+    text-shadow: 0 0 8px #ff9ecb, 0 0 20px #ff6fb0, 0 0 35px #ff4d9e;
+    margin-bottom: 10px;
+    animation: glow 2.5s ease-in-out infinite alternate;
+  }
+
+  @keyframes glow {
+    from { text-shadow: 0 0 8px #ff9ecb, 0 0 18px #ff6fb0; }
+    to   { text-shadow: 0 0 14px #ffb3d9, 0 0 32px #ff4d9e, 0 0 50px #ff2e8f; }
+  }
+
+  .subtitle {
+    color: #d6337a;
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+    text-align: center;
+  }
+
+  /* ФОТО */
+  .photos {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+
+  .photo-card {
+    background: #fff0f7;
+    padding: 10px;
+    border-radius: 22px;
+    border: 3px solid #ff4d9e;
+    box-shadow:
+      0 0 10px #ff6fb0,
+      0 0 25px #ff4d9e,
+      0 0 45px rgba(255, 77, 158, 0.6),
+      inset 0 0 15px rgba(255, 158, 203, 0.5);
+    transition: transform .35s ease, box-shadow .35s ease;
+  }
+
+  .photo-card:hover {
+    transform: scale(1.04) rotate(-1deg);
+    box-shadow:
+      0 0 18px #ff6fb0,
+      0 0 40px #ff4d9e,
+      0 0 70px rgba(255, 46, 143, 0.8),
+      inset 0 0 20px rgba(255, 158, 203, 0.6);
+  }
+
+  .photo-card img {
+    display: block;
+    width: 260px;
+    max-width: 78vw;
+    border-radius: 14px;
+  }
+
+  /* КНОПКА */
+  .btn {
+    position: relative;
+    padding: 20px 55px;
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #fff;
+    background: linear-gradient(135deg, #ff7ab8, #ff3d8b);
+    border: 3px solid #ffd6e8;
+    border-radius: 60px;
+    cursor: pointer;
+    letter-spacing: .5px;
+    box-shadow:
+      0 0 12px #ff6fb0,
+      0 0 30px #ff4d9e,
+      0 0 55px rgba(255, 46, 143, 0.7);
+    transition: transform .2s ease, box-shadow .2s ease;
+    animation: pulse 2s ease-in-out infinite;
+  }
+
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 12px #ff6fb0, 0 0 30px #ff4d9e, 0 0 55px rgba(255,46,143,.7); }
+    50%      { box-shadow: 0 0 20px #ff8fc4, 0 0 45px #ff4d9e, 0 0 80px rgba(255,46,143,.9); }
+  }
+
+  .btn:hover  { transform: scale(1.07); }
+  .btn:active { transform: scale(0.95); }
+
+  .hint {
+    margin-top: 18px;
+    color: #c72a6f;
+    font-size: .95rem;
+    opacity: .85;
+  }
+
+  /* ЛЕТЯЩИЕ СЕРДЕЧКИ */
+  .heart {
+    position: fixed;
+    pointer-events: none;
+    font-size: 30px;
+    z-index: 999;
+    animation: fly 2.6s ease-out forwards;
+    user-select: none;
+  }
+
+  @keyframes fly {
+    0% {
+      opacity: 1;
+      transform: translate(0, 0) scale(0.5) rotate(0deg);
+    }
+    15% {
+      transform: translate(var(--x1), -60px) scale(1.2) rotate(20deg);
+    }
+    100% {
+      opacity: 0;
+      transform: translate(var(--x2), -110vh) scale(0.8) rotate(var(--rot));
+    }
+  }
+
+  .footer-text {
+    margin-top: 45px;
+    font-size: 1.2rem;
+    color: #e0417f;
+    text-align: center;
+    text-shadow: 0 0 10px #ffb3d9, 0 0 22px #ff6fb0;
+    max-width: 600px;
+    line-height: 1.6;
+  }
+</style>
+</head>
+<body>
+
+  <h1>Ты очень красивая 💗</h1>
+  <p class="subtitle">Эта страничка сделана специально для тебя</p>
+
+  <div class="photos">
+    <div class="photo-card">
+      <img src="https://i.ibb.co/PZ4q2xg7/IMG-20260929-163557-601.jpg" alt="Красивая девочка 1">
+    </div>
+    <div class="photo-card">
+      <img src="https://i.ibb.co/ZzkjrDHF/IMG-20260929-163559-724.jpg" alt="Красивая девочка 2">
+    </div>
+  </div>
+
+  <button class="btn" id="loveBtn">Нажми меня 💖</button>
+  <p class="hint">(и посмотри, что будет ✨)</p>
+
+  <p class="footer-text">
+    Ты самая милая, самая нежная и самая красивая 💕<br>
+    Пусть твой день будет таким же тёплым, как эти сердечки.
+  </p>
+
+<script>
+  const btn = document.getElementById('loveBtn');
+  const emojis = ['💖','💗','💕','💞','💓','❤️','🌸','✨'];
+
+  function createHeart(x, y) {
+    const heart = document.createElement('div');
+    heart.className = 'heart';
+    heart.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+
+    const x1 = (Math.random() - 0.5) * 200;      // первый изгиб
+    const x2 = (Math.random() - 0.5) * 400;      // конечное смещение
+    const rot = (Math.random() - 0.5) * 720;     // вращение
+
+    heart.style.left = x + 'px';
+    heart.style.top  = y + 'px';
+    heart.style.setProperty('--x1', x1 + 'px');
+    heart.style.setProperty('--x2', x2 + 'px');
+    heart.style.setProperty('--rot', rot + 'deg');
+    heart.style.fontSize = (22 + Math.random() * 26) + 'px';
+
+    document.body.appendChild(heart);
+    setTimeout(() => heart.remove(), 2700);
+  }
+
+  function burst(x, y, count = 14) {
+    for (let i = 0; i < count; i++) {
+      setTimeout(() => createHeart(x, y), i * 45);
+    }
+  }
+
+  // Клик по кнопке — сердечки из её центра
+  btn.addEventListener('click', (e) => {
+    const r = btn.getBoundingClientRect();
+    burst(r.left + r.width / 2, r.top + r.height / 2, 18);
+  });
+
+  // Клик в любом месте — тоже сердечко
+  document.addEventListener('click', (e) => {
+    if (e.target === btn) return;
+    burst(e.clientX, e.clientY, 6);
+  });
+
+  // Немного волшебства при загрузке
+  window.addEventListener('load', () => {
+    setTimeout(() => {
+      const r = btn.getBoundingClientRect();
+      burst(r.left + r.width / 2, r.top + r.height / 2, 10);
+    }, 400);
+  });
+</script>
+
+</body>
+</html>
